@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -6,7 +7,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <a href="#">See my basket</a>
+          <a routerLink="/basket">See my basket</a>
         </li>
       </ul>
     </div>
@@ -15,23 +16,7 @@
  
 <div class="container">
  
-  <header class="jumbotron hero-spacer">
-    <h1>{{title}}</h1>
-    <p>Your basket amounts to {{customerService.getTotal()}}€</p>
-    <p><a class="btn btn-primary btn-large">See my basket</a></p>
-  </header>
- 
-  <hr>
- 
-  <div class="row">
-    <div class="col-lg-12">
-      <h2>Last products</h2>
-    </div>
-  </div>
-  <ng-container *ngFor="let product of productService.getProducts()">
-    <app-product *ngIf="productService.isAvailable(product)" [data]="product" (addToBasket)="addToBasket($event)"></app-product>
-  </ng-container> 
-  <hr>
+  
  
   <footer>
     Copyright &copy; Your Website 2020
