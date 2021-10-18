@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -14,7 +15,10 @@ export class ProductComponent implements OnInit {
   @Output()
   addToBasket: EventEmitter<Product> = new EventEmitter();
 
-  constructor() {
+  productService: ProductService;
+
+  constructor(productService: ProductService) {
+    this.productService=productService;
   }
 
   ngOnInit(): void {

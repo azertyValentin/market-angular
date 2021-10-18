@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductComponent } from './product/product.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,13 @@ import { ProductComponent } from './product/product.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'Title',
+      useValue: 'Welcome to Zenika Ecommerces!'
+    },
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
